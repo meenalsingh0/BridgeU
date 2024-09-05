@@ -46,6 +46,10 @@ app.get('/login', (req, res) => {
   res.render('login')
 })
 
+app.get('/userprofile', (req, res) => {
+  res.render('userprofile')
+})
+
 app.get('/events', (req, res) => {
     res.render('events')
 })
