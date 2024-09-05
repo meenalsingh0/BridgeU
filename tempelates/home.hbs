@@ -1,0 +1,50 @@
+<!-- tempelates /home.hbs -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon">
+    <link rel="icon" href="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/home.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>GradTogether</title>
+</head>
+    <body>
+        <!-- Navbar Section -->
+        <nav class="navbar">
+            <div class="logo">BridgeU</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Forum</a></li>
+                <li><a href="#">Donation</a></li>
+                <li><a href="#">Connect</a></li>
+            </ul>
+            <div class="burger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to BridgeU</h1>
+                <p>Your gateway to reconnect, collaborate, and build lasting memories with your alumni community.</p>
+                <a href="/2signup" class="cta-btn">Join the Community</a>
+            </div>
+        </section>
+
+        <script defer src="script.js">
+            // Responsive Navbar Toggle
+const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
+
+burger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+</script>
+    </body>
+    </html>

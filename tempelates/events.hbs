@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/events.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-item">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">GradTogether</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">All Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Upcoming Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Attended Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Host an Event</a>
+              </li>
+              <li>
+                <div class="container-fluid">
+                    <form class="d-flex" role="search">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit" id="black-clr">Search</button>
+                    </form>
+                  </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      
+      
+      <div class="event-panel">
+          <div class="card event-element">
+            <img src="./images/event1.jpeg" class="card-img-top" alt="...">
+            
+          
+            <div class="card-body">
+              <h5 class="card-title">Event 1</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos modi ipsa iusto corporis neque explicabo maiores autem, optio culpa obcaecati?</p>
+              <a href="#" class="btn btn-primary">Go to Dashboard</a>
+            </div>
+          </div>
+
+          <div class="card event-element">
+            <img src="./images/event2.jpeg" class="card-img-top" alt="...">
+          
+            <div class="card-body">
+              <h5 class="card-title">Event 2</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos modi ipsa iusto corporis neque explicabo maiores autem, optio culpa obcaecati?</p>
+              <a href="#" class="btn btn-primary">Go to Dashboard</a>
+            </div>
+          </div>
+
+          <div class="card event-element">
+            <img src="./images/event3.jpeg" class="card-img-top" alt="...">
+          
+            <div class="card-body">
+              <h5 class="card-title">Event 3</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos modi ipsa iusto corporis neque explicabo maiores autem, optio culpa obcaecati?</p>
+              <a href="#" class="btn btn-primary">Go to Dashboard</a>
+            </div>
+          </div>
+
+          <div class="card event-element">
+            <img src="./images/event4.jpeg" class="card-img-top" alt="...">
+          
+            <div class="card-body">
+              <h5 class="card-title">Event 4</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos modi ipsa iusto corporis neque explicabo maiores autem, optio culpa obcaecati?</p>
+              <a href="#" class="btn btn-primary">Go to Dashboard</a>
+            </div>
+          </div>
+
+          <div class="card event-element">
+            <img src="./images/event5.jpeg" class="card-img-top" alt="...">
+          
+            <div class="card-body">
+              <h5 class="card-title">Event 5</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos modi ipsa iusto corporis neque explicabo maiores autem, optio culpa obcaecati?</p>
+              <a href="#" class="btn btn-primary">Go to Dashboard</a>
+            </div>
+          </div>
+      </div>
+        <script>
+            // Function to add a new card to the event panel
+function addEventCard(event) {
+    // Create the card element
+    const card = document.createElement('div');
+    card.className = 'card event-element';
+    
+    // Create the image element
+    const img = document.createElement('img');
+    img.src = event.imageUrl; // Set the image source
+    img.className = 'card-img-top';
+    img.alt = event.title;
+    card.appendChild(img);
+    
+    // Create the card body
+    const cardBody = document.createElement('div');
+    cardBody.className = 'card-body';
+    
+    // Create the card title
+    const cardTitle = document.createElement('h5');
+    cardTitle.className = 'card-title';
+    cardTitle.textContent = event.title;
+    cardBody.appendChild(cardTitle);
+    
+    // Create the card text
+    const cardText = document.createElement('p');
+    cardText.className = 'card-text';
+    cardText.textContent = event.description;
+    cardBody.appendChild(cardText);
+    
+    // Create the button
+    const cardButton = document.createElement('a');
+    cardButton.className = 'btn btn-primary';
+    cardButton.href = event.link;
+    cardButton.textContent = 'Go to Dashboard';
+    cardBody.appendChild(cardButton);
+    
+    // Append the card body to the card
+    card.appendChild(cardBody);
+    
+    // Append the card to the event panel
+    document.querySelector('.event-panel').appendChild(card);
+}
+
+// Example event data (this would come from your backend)
+const exampleEvent = {
+    imageUrl: './images/event6.jpeg',
+    title: 'Event 6',
+    description: 'This is a description for Event 6.',
+    link: '#'
+};
+
+// Add the new event card when needed
+addEventCard(exampleEvent);
+
+// Example of adding another event card with different data
+const anotherEvent = {
+    imageUrl: './images/event7.jpeg',
+    title: 'Event 7',
+    description: 'This is a description for Event 7.',
+    link: '#'
+};
+
+// Add the second event card
+addEventCard(anotherEvent);
+        </script>
+</body>
+</html>

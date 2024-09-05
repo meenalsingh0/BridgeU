@@ -1,0 +1,168 @@
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: black;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 12px;
+  transition: background 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+/* Burger Menu for mobile */
+.burger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #333;
+    width: 100%;
+    text-align: right;
+  }
+
+  .nav-links li {
+    margin: 0;
+    padding: 20px 10px;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+.login-section {
+    display: flex;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center ;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.login-section h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.login-container {
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 10px;
+}
+body {
+  background: linear-gradient(297deg, #a781f5 0%, white 0%, #a781f5 100%);
+}
+.for-students,
+.for-alumni {
+  width: 45%;
+  background-color: white;
+  padding: 50px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.479);
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+
+
+.orange-btn {
+  background-color: #a781f5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.orange-btn:hover {
+  background-color: #a781f5;
+}
+
+a {
+  color: black;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .for-students,
+  .for-alumni {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}

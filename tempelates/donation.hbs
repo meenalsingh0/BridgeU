@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Page</title>
+    <link rel="stylesheet" href="css/donation.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Donation Page</h1>
+    </header>
+
+    <section class="donation-grid">
+        <div class="donation-card">
+            <h2>Hackhound Club Hackathon</h2>
+            <p>Support the Hackhound Club in organizing the annual hackathon. Your donation will help cover event costs, participant swag, and more.</p>
+            <button onclick="donate('Hackhound Club Hackathon')">Donate Now</button>
+        </div>
+        
+        <div class="donation-card">
+            <h2>Green Earth Initiative</h2>
+            <p>Contribute to environmental conservation efforts with the Green Earth Initiative. Funds will be used for tree planting and waste reduction programs.</p>
+            <button onclick="donate('Green Earth Initiative')">Donate Now</button>
+        </div>
+        
+        <div class="donation-card">
+            <h2>Literacy for All Campaign</h2>
+            <p>Help improve literacy rates by supporting the Literacy for All Campaign. Donations will fund educational resources and training programs.</p>
+            <button onclick="donate('Literacy for All Campaign')">Donate Now</button>
+        </div>
+        
+        <div class="donation-card">
+            <h2>Tech for Kids Foundation</h2>
+            <p>Support the Tech for Kids Foundation in providing technology and educational resources to underprivileged children.</p>
+            <button onclick="donate('Tech for Kids Foundation')">Donate Now</button>
+        </div>
+
+        <div class="donation-card">
+            <h2>Veterans Support Fund</h2>
+            <p>Assist veterans in transitioning back to civilian life by contributing to the Veterans Support Fund. Your donation will aid in job training and mental health services.</p>
+            <button onclick="donate('Veterans Support Fund')">Donate Now</button>
+        </div>
+    </section>
+
+    <script>
+           function donate(eventName) {
+        // Log the event or any logic before redirection
+        console.log("Donating to: " + eventName);
+        
+        // Redirect to the donation page
+        window.location.href = "/paymentGateway"; // Change "/donation-page" to the URL you want to link to
+    }
+
+    </script>
+</body>
+</html>
+
