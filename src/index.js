@@ -38,6 +38,10 @@ app.get('/clubs', (req, res) => {
     res.render('clubs')
 })
 
+app.get('/dashboard', (req, res) => {
+    res.render('dashboard')
+})
+
 app.get('/login', (req, res) => {
   res.render('login')
 })
