@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BridgeU - Posts</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #7333f1;
+            margin: 20px 0;
+        }
+
+        .posts-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .post-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .post-title {
+            font-size: 1.5em;
+            color: #7333f1;
+            margin: 0 0 10px;
+        }
+
+        .post-category {
+            font-size: 0.9em;
+            background-color: #7333f1;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .post-description {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .post-user {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .post-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .posts-container {
+                padding: 10px;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Latest Posts</h1>
+
+    <div class="posts-container" id="postsContainer">
+        <!-- Posts will be inserted here dynamically -->
+    </div>
+
+    <script>
+        async function fetchPosts() {
+            try {
+                const response = await fetch('/posts');
+                const posts = await response.json();
+
+                const postsContainer = document.getElementById('postsContainer');
+                posts.forEach(post => {
+                    const postCard = document.createElement('div');
+                    postCard.classList.add('post-card');
+
+                    const postTitle = document.createElement('h2');
+                    postTitle.classList.add('post-title');
+                    postTitle.innerText = post.title;
+
+                    const postCategory = document.createElement('span');
+                    postCategory.classList.add('post-category');
+                    postCategory.innerText = post.category.charAt(0).toUpperCase() + post.category.slice(1);
+
+                    const postDescription = document.createElement('p');
+                    postDescription.classList.add('post-description');
+                    postDescription.innerText = post.description;
+
+                    const postUser = document.createElement('p');
+                    postUser.classList.add('post-user');
+                    postUser.innerText = `Posted by: ${post.userName}`;
+
+                    postCard.appendChild(postTitle);
+                    postCard.appendChild(postCategory);
+                    postCard.appendChild(postDescription);
+                    postCard.appendChild(postUser);
+
+                    postsContainer.appendChild(postCard);
+                });
+            } catch (error) {
+                console.error('Error fetching posts:', error);
+            }
+        }
+
+        // Call the function to fetch and display posts when the page loads
+        fetchPosts();
+    </script>
+
+</body>
+</html>
