@@ -1,0 +1,53 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(297deg, #A781F5 0%, white 0%, #A781F5 100%);
+    height: 100em;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 500px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#directory {
+    display: none; /* Hidden by default */
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.alumni {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.alumni:last-child {
+    border-bottom: none;
+}
+
+.alumni .name {
+    font-weight: bold;
+}
+
+.alumni .details {
+    color: #666;
+    font-size: 0.9em;
+}
