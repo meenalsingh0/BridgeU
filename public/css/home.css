@@ -1,126 +1,221 @@
-html{
-    scroll-behavior: smooth;
+.desktop-5,
+.desktop-5 * {
+  box-sizing: border-box;
 }
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-
+.desktop-5 {
+  background: linear-gradient(
+    -62.81deg,
+    rgba(167, 129, 245, 1) 0%,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(167, 129, 245, 1) 100%
+  );
+  border-style: solid;
+  border-color: transparent;
+  border-width: 1px;
+  height: 1777px;
+  position: relative;
+  overflow: hidden;
 }
-
-/* Navbar Styling */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.events {
+  color: #000000;
+  text-align: center;
+  font-family: "Montserrat-Light", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  position: absolute;
+  left: 973px;
+  top: 55px;
+  width: 102px;
+  height: 77px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
+.forum {
+  color: #000000;
+  text-align: center;
+  font-family: "Montserrat-Light", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  position: absolute;
+  left: 1095px;
+  top: 53px;
+  width: 101px;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.nav-links {
-    list-style: none;
-    display: flex;
+.clubs {
+  color: #000000;
+  text-align: center;
+  font-family: "Montserrat-Light", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  position: absolute;
+  left: 1217px;
+  top: 52px;
+  width: 102px;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.nav-links li {
-    margin-left: 20px;
+.alumni-directory {
+  color: #000000;
+  text-align: center;
+  font-family: "Montserrat-Light", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  position: absolute;
+  left: 1338px;
+  top: 52px;
+  width: 102px;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 8px 12px;
-    transition: background 0.3s ease;
+.home {
+  color: #000000;
+  text-align: center;
+  font-family: "Montserrat-Light", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  position: absolute;
+  left: 855px;
+  top: 53px;
+  width: 99px;
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.nav-links a:hover {
-    background-color: #555;
-    border-radius: 5px;
+.saly-31 {
+  width: 402px;
+  height: 293px;
+  position: absolute;
+  left: 954px;
+  top: 1079px;
 }
-
-/* Burger Menu for mobile */
-.burger {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
+.saly-312 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  object-fit: cover;
 }
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #333;
-        width: 100%;
-        text-align: right;
-    }
-
-    .nav-links li {
-        margin: 0;
-        padding: 20px 10px;
-    }
-
-    .burger {
-        display: block;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
+.saly-10 {
+  width: 372px;
+  height: 375px;
+  position: absolute;
+  left: 122px;
+  top: 1424px;
 }
-
-/* Hero Section Styling */
-.hero {
-    height: 100vh;
-    background-image: url('https://source.unsplash.com/1600x900/?university,people');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
+.saly-102 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: -2.71%;
+  left: 2.71%;
+  bottom: 16.94%;
+  top: -16.94%;
+  object-fit: cover;
 }
-
-.hero-content {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
+.welcome-to-the-future-of-collaboration-connect-with-alumni-for-mentorship-insights-and-support-whether-launching-projects-or-seeking-advice-this-is-your-space-to-grow-and-make-impactful-connections-start-shaping-your-future-today {
+  color: #000000;
+  text-align: left;
+  font-family: "Montserrat-Light", sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  font-weight: 300;
+  position: absolute;
+  left: 122px;
+  top: 1163px;
+  width: 570px;
+  height: 279px;
 }
-
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
+.frame-2 {
+  width: 974px;
+  height: 187px;
+  position: absolute;
+  left: 243px;
+  top: 439px;
+  overflow: hidden;
 }
-
-.hero p {
-    font-size: 20px;
-    margin-bottom: 30px;
+._20240905-115311-1 {
+  width: 125px;
+  height: 99px;
+  position: absolute;
+  left: 2px;
+  top: 36px;
+  object-fit: cover;
 }
-
-.cta-btn {
-    background-color: #ff5722;
-    padding: 12px 25px;
-    text-decoration: none;
-    color: white;
-    border-radius: 5px;
-    font-size: 18px;
-    transition: background 0.3s ease;
+.reconnect-inspire-contribute-mentor-students-support-projects-and-share-your-expertise-make-a-difference-and-give-back-to-the-community-that-shaped-you-let-s-empower-the-future-together {
+  color: #000000;
+  text-align: left;
+  font-family: "Montserrat-Light", sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  font-weight: 300;
+  position: absolute;
+  left: 730px;
+  top: 1531px;
+  width: 588px;
+  height: 246px;
 }
-
-.cta-btn:hover {
-    background-color: #e64a19;
+.dall-e-2024-09-05-13-03-54-a-minimalistic-landscape-background-image-with-very-dull-and-light-shades-of-1 {
+  width: 1600px;
+  height: 880px;
+  position: absolute;
+  left: 0px;
+  top: 148px;
+  object-fit: cover;
+}
+.creating-legacies-inspiring-future {
+  color: #000000;
+  text-align: center;
+  font-family: "Montserrat-ExtraBoldItalic", sans-serif;
+  font-size: 64px;
+  font-weight: 800;
+  font-style: italic;
+  position: absolute;
+  left: 105px;
+  top: 304px;
+  width: 1233px;
+  height: 322px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.frame-3 {
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  width: 345px;
+  height: 78px;
+  position: absolute;
+  left: 487px;
+  top: 929px;
+  overflow: hidden;
+}
+.join-our-community {
+  color: #000;
+  text-align: center;
+  font-family: "Montserrat-Bold", sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  cursor: pointer;
+  width: 345px;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

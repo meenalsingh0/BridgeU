@@ -34,6 +34,11 @@ app.use(express.static(publicPath));
 app.get('/signup', (req, res) => {
     res.render('signup')
 })
+
+app.get('/directory', (req, res) => {
+    res.render('directory')
+})
+
 app.get('/clubs', (req, res) => {
     res.render('clubs')
 })
