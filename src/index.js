@@ -94,6 +94,9 @@ app.get("/success", (req, res) => {
 app.get("/stuprofile", (req, res) => {
     res.render("stuprofile");
   });
+  app.get("/connect", (req, res) => {
+    res.render("connect");
+  });
   
 
 // app.get('/home', (req, res) => {
@@ -123,44 +126,44 @@ app.post("/studentRegister", async (req, res) => {
   }
 });
 
-// app.post("/alumniRegister", async (req, res) => {
-//   const data = {
-//     email: req.body.email,
-//     username: req.body.username,
-//     passOutYear: req.body.passOutYear,
-//     password: req.body.password,
-//   };
+app.post("/alumniRegister", async (req, res) => {
+  const data = {
+    email: req.body.email,
+    username: req.body.username,
+    passOutYear: req.body.passOutYear,
+    password: req.body.password,
+  };
 
-//   try {
-//     const checking = await aluRegister.findOne({ username: req.body.username });
+  try {
+    const checking = await aluRegister.findOne({ username: req.body.username });
 
-//     if (checking && checking.username === req.body.username) {
-//       res.send("User details already exist");
-//     } else {
-//       await aluRegister.insertMany([data]);
-//       res.status(201).render("studash", { naming: `${req.body.username}` , emailing:`${req.body.email}` , passing:`${req.body.passOutYear }`});
-//     }
-//   } catch (error) {
-//     res.redirect("/"); // Redirect to home page if an error occurs
-//   }
-// });
+    if (checking && checking.username === req.body.username) {
+      res.send("User details already exist");
+    } else {
+      await aluRegister.insertMany([data]);
+      res.status(201).render("studash", { naming: `${req.body.username}` , emailing:`${req.body.email}` , passing:`${req.body.passOutYear }`});
+    }
+  } catch (error) {
+    res.redirect("/"); // Redirect to home page if an error occurs
+  }
+});
 
-// app.post("/login", async (req, res) => {
-//   try {
-//     const check = await LogInCollection.findOne({
-//       username: req.body.username,
-//     });
+app.post("/login", async (req, res) => {
+  try {
+    const check = await LogInCollection.findOne({
+      username: req.body.username,
+    });
 
-//     if (check.password === req.body.password) {
-//       res.status(201).render("studash", {naming: `${req.body.username}`,
-//     });
-//     } else {
-//       res.send("incorrect password");
-//     }
-//   } catch (e) {
-//     res.send("wrong details");
-//   }
-// });
+    if (check.password === req.body.password) {
+      res.status(201).render("studash", {naming: `${req.body.username}`,
+    });
+    } else {
+      res.send("incorrect password");
+    }
+  } catch (e) {
+    res.send("wrong details");
+  }
+});
 
 app.listen(port, () => {
   console.log("port connected");
