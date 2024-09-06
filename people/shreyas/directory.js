@@ -1,7 +1,7 @@
 // Sample alumni data
 const alumniData = [
     { name: "Anay Singh", year: 2015, degree: "Btech Computer Science", field: "Software Engineering" },
-    { name: "Vishal Chauhan", year: 2018, degree: "Btech Computer Science", field: "" },
+    { name: "Vishal Chauhan", year: 2018, degree: "Btech Computer Science", field: "Freelance web developer" },
     { name: "Sandhya Yadav", year: 2020, degree: "Btech Computer Science", field: "Data Analysis" },
     { name: "Tushar Mukherjee", year: 2017, degree: "Btech Computer Science", field: "Devops " },
     { name: "Vishal Kumar", year: 2019, degree: "BA Economics", field: "Junior Android Devloper" },

@@ -8,7 +8,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Load the dataset
-df = pd.read_csv('database.csv')
+df = pd.read_csv('people\database.csv')
 
 # Extracting interest features (excluding 'Person' column)
 interest_columns = df.columns[1:]

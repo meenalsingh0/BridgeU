@@ -32,7 +32,16 @@ document.getElementById('getRecommendations').addEventListener('click', function
                 resultsDiv.innerHTML = `<p>${data.error}</p>`;  
             } else {
                 
-                for (const [person, score] of Object.entries(data)) {
+                let data2={} ;
+                for (const [person, score] of Object.entries(data)) 
+                {
+                    data2[person]=score;
+                }
+                const sortedData = Object.entries(data2) ;
+                sortedData.sort((a, b) => a[0].localeCompare(b[0])); // Sort by keys// or
+                sortedData.sort((a, b) => b[1]-a[1]); // Sort by values
+                const sortedDict2 = Object.fromEntries(sortedData);
+                for (const [person, score] of Object.entries(sortedDict2)) {
                     
                     const resultItem = document.createElement('div');
                     resultItem.classList.add('result-item');  
