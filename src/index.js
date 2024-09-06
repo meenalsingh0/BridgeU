@@ -5,6 +5,7 @@ const app = express();
 // const hbs = require("hbs")
 const LogInCollection = require("./mongo");
 const stuRegister = require("./studentRegister");
+const aluRegister = require("./alumniregister");
 
 require("dotenv").config();
 var http = require("http").Server(app);
@@ -90,6 +91,11 @@ app.get("/success", (req, res) => {
   res.render("success");
 });
 
+app.get("/stuprofile", (req, res) => {
+    res.render("stuprofile");
+  });
+  
+
 // app.get('/home', (req, res) => {
 //     res.render('home')
 // })
@@ -109,51 +115,52 @@ app.post("/studentRegister", async (req, res) => {
       res.send("User details already exist");
     } else {
       await stuRegister.insertMany([data]);
-      res.status(201).render("studash", { naming: req.body.username });
+      res.status(201).render("studash", { naming: `${req.body.username}`})
+      res.status(201).render("stuprofile", { emailing:`${req.body.email}`,naming: `${req.body.username}`  , passing:`${req.body.passOutYear }` });
     }
   } catch (error) {
     res.redirect("/"); // Redirect to home page if an error occurs
   }
 });
 
+// app.post("/alumniRegister", async (req, res) => {
+//   const data = {
+//     email: req.body.email,
+//     username: req.body.username,
+//     passOutYear: req.body.passOutYear,
+//     password: req.body.password,
+//   };
 
+//   try {
+//     const checking = await aluRegister.findOne({ username: req.body.username });
 
+//     if (checking && checking.username === req.body.username) {
+//       res.send("User details already exist");
+//     } else {
+//       await aluRegister.insertMany([data]);
+//       res.status(201).render("studash", { naming: `${req.body.username}` , emailing:`${req.body.email}` , passing:`${req.body.passOutYear }`});
+//     }
+//   } catch (error) {
+//     res.redirect("/"); // Redirect to home page if an error occurs
+//   }
+// });
 
+// app.post("/login", async (req, res) => {
+//   try {
+//     const check = await LogInCollection.findOne({
+//       username: req.body.username,
+//     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-app.post("/login", async (req, res) => {
-  try {
-    const check = await LogInCollection.findOne({
-      username: req.body.username,
-    });
-
-    if (check.password === req.body.password) {
-      res
-        .status(201)
-        .render("studash", {
-          naming: `${req.body.password}+${req.body.username}`,
-        });
-    } else {
-      res.send("incorrect password");
-    }
-  } catch (e) {
-    res.send("wrong details");
-  }
-});
+//     if (check.password === req.body.password) {
+//       res.status(201).render("studash", {naming: `${req.body.username}`,
+//     });
+//     } else {
+//       res.send("incorrect password");
+//     }
+//   } catch (e) {
+//     res.send("wrong details");
+//   }
+// });
 
 app.listen(port, () => {
   console.log("port connected");
