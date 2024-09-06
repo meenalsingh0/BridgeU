@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
   <title>Alumni Dashboard</title>
-  <link rel="stylesheet" href="css/dash.css">
+  <link rel="stylesheet" href="studash.css">
 </head>
 <body>
     <nav class="navbar">
@@ -14,8 +14,8 @@
             <li><a href="/Events">Events</a></li>
             <li><a href="#">Forum</a></li>
             <li><a href="/clubs">Clubs</a></li>
-            <li><a href="/directory">Alumni Directory</a></li>
-            <li><a href="/userprofile">Profile</a></li>
+            <li><a href="/directory"> Directory</a></li>
+            <li><a href="/userprofile">My Profile</a></li>
         </ul>
         <div class="burger">
             <i class="fas fa-bars"></i>
@@ -24,8 +24,8 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <h1>Welcome,john!</h1>
-      <p>Reconnect, grow, and contribute to the alumni community.</p>
+      <h1>Welcome</h1>
+      <p>Reconnect, grow, and contribute to the student community.</p>
     </div>
   </section>
 
@@ -36,22 +36,22 @@
       <div class="feature-grid">
 
         <div class="feature-card">
-          <h3>Alumni-to-Alumni Connection</h3>
+          <h3>Student-to-Alumni Connection</h3>
           <p>Engage and connect with your fellow alumni across industries and locations.</p>
         </div>
 
         <div class="feature-card">
-          <h3>Alumni Directory & Filtering</h3>
+          <h3>Alumni/Student Directory & Filtering</h3>
           <p>Search for alumni using our comprehensive directory with easy filters for batch, course, and more.</p>
         </div>
 
         <div class="feature-card">
-          <h3>Job Openings Posting</h3>
-          <p>Share or explore job opportunities within our alumni network to help grow careers.</p>
+          <h3>Job Openings</h3>
+          <p>Share or explore job opportunities within our network to help grow careers.</p>
         </div>
 
         <div class="feature-card">
-          <h3>Donations for Clubs & Scholarships</h3>
+          <h3>Donations for Clubs & Scholarship Fundraising</h3>
           <p>Contribute to clubs, scholarships, or causes that resonate with you and help future students.</p>
         </div>
 
@@ -64,15 +64,6 @@
     <p>&copy; 2024 copyright</p>
   </footer>
 
-  <script>
-    <!-- Include Handlebars from a CDN -->
-<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-<script>
-  // compile the template
-  var template = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
-  // execute the compiled template and print the output to the console
-  console.log(template({ doesWhat: "rocks!" }));
-</script>
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

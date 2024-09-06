@@ -219,3 +219,35 @@
   align-items: center;
   justify-content: center;
 }
+
+
+
+/* General styles for buttons */
+button {
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for all buttons - darker tone of #a781f5 */
+button:hover {
+  background-color: #8b64d9; /* Darker tone of #a781f5 */
+  color: white; /* Change text color to white */
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="posting.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Create a New Post</h2>
+    <form id="postForm" enctype="multipart/form-data">
+        <label for="title">Post Title:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="category">Post Category:</label>
+        <select id="category" name="category" required>
+            <option value="event">Event</option>
+            <option value="job">Job Opening</option>
+            <option value="fundraising">Fundraising</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="description">Post Description:</label>
+        <textarea id="description" name="description" rows="5" required></textarea>
+        <button type="submit">Submit Post</button>
+    </form>
+
+    <div id="responseMessage"></div>
+</div>
+
+<script>
+    document.getElementById('postForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const form = document.getElementById('postForm');
+        const formData = new FormData(form);
+
+        const response = await fetch('/create-post', {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await response.json();
+        const messageElement = document.getElementById('responseMessage');
+
+        if (response.ok) {
+            messageElement.innerHTML = `<p style="color: green;">${result.message}</p>`;
+            form.reset(); 
+        } else {
+            messageElement.innerHTML = `<p style="color: red;">${result.error}</p>`;
+        }
+    });
+</script>
+
+</body>
+</html>

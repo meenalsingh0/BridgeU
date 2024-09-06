@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="newreg.css">
+</head>
+<body>
+
+  <div class="container">
+    <form id="registrationForm">
+      <h1>Register</h1>
+
+      <label for="email">Email ID</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="passOutYear">Pass-Out Year</label>
+      <input type="number" id="passOutYear" name="passOutYear" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Register</button>
+      <p id="formMessage"></p>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form from submitting the default way
+
+  const email = document.getElementById('email').value;
+  const username = document.getElementById('username').value;
+  const passOutYear = parseInt(document.getElementById('passOutYear').value);
+  const password = document.getElementById('password').value;
+  const currentYear = new Date().getFullYear();
+  let userType = '';
+
+  // Determine user type based on pass-out year
+  if (passOutYear >= currentYear) {
+    userType = 'Student';
+  } else {
+    userType = 'Alumni';
+  }
+
+  // Prepare data for sending to backend
+  const formData = {
+    email,
+    username,
+    passOutYear,
+    password,
+    userType
+  };
+
+  // Send form data to backend (replace with your API endpoint)
+  fetch('/api/register', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      document.getElementById('formMessage').innerText = 'Registration successful!';
+      document.getElementById('registrationForm').reset();
+    } else {
+      document.getElementById('formMessage').innerText = 'Registration failed. Please try again.';
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    document.getElementById('formMessage').innerText = 'An error occurred. Please try again later.';
+  });
+});
+
+  </script>
+</body>
+</html>
