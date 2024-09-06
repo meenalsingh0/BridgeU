@@ -1,7 +1,10 @@
 .navbar-item:last-child {
     align-items: end;
+    color: white !important;
 }
-
+.container-fluid{
+    color: white !important;
+}
 .event-panel {
     display: flex;
     flex-wrap: wrap;
@@ -21,8 +24,8 @@
 }
 
 .navbar {
-    background-color: #1a4955;
-    color: white;
+    background-color: #000;
+    color: white !important;
     padding: 20px;
 }
 
@@ -30,4 +33,7 @@
     margin-left: 11px;
     color: black;
     border-color: black;
+}
+a{
+    text-decoration: none;
 }

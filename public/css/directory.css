@@ -1,5 +1,8 @@
-body {
+*{
     font-family: 'Montserrat', sans-serif;
+
+}
+body {
     background: linear-gradient(297deg, #A781F5 0%, white 0%, #A781F5 100%);
     height: 100em;
     margin: 0;
@@ -8,7 +11,75 @@ body {
 
 .container {
     width: 500px;
-    margin: 50px auto;
+    margin: 50px auto;html
+    {
+        background: linear-gradient(297deg, #A781F5 0%, white 0%, #A781F5 100%);
+    }
+    body {
+        font-family: Arial, sans-serif;
+        height: 100em;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    
+    .filter-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    
+    input {
+        width: 80%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    
+    button {
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        margin-left: 5px;
+        border-radius: 5px;
+        height: 40px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #555;
+    }
+    
+    #alumniList {
+        margin-top: 20px;
+    }
+    
+    .alumni {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+    }
+    
+    .alumni p {
+        margin: 5px 0;
+    }
+    
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;

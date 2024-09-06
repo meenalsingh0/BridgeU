@@ -11,56 +11,66 @@
 <body>
     <div class="container">
         <h1>Alumni Directory</h1>
-        <input type="text" id="searchInput" placeholder="Search for alumni...">
-        <div id="directory">
-            <!-- Filtered alumni list will be displayed here -->
+
+        <div class="filter-container">
+            <input type="text" id="searchInput" placeholder="Search by name, year, degree, or field" />
+            <button id="filterBtn">Search</button>
+        </div>
+
+        <div id="alumniList">
+            <!-- Alumni data will be displayed here -->
         </div>
     </div>
     <script>
-        const alumniData = [
-    { name: "John Doe", year: "2010", major: "Computer Science" },
-    { name: "Jane Smith", year: "2012", major: "Business Administration" },
-    { name: "Alice Johnson", year: "2015", major: "Electrical Engineering" },
-    { name: "Bob Brown", year: "2017", major: "Mechanical Engineering" },
-    { name: "Charlie Davis", year: "2020", major: "Biology" }
+        // Sample alumni data
+const alumniData = [
+    { name: "Anay Singh", year: 2015, degree: "Btech Computer Science", field: "Software Engineering" },
+    { name: "Vishal Chauhan", year: 2018, degree: "Btech Computer Science", field: "Freelance web developer" },
+    { name: "Sandhya Yadav", year: 2020, degree: "Btech Computer Science", field: "Data Analysis" },
+    { name: "Tushar Mukherjee", year: 2017, degree: "Btech Computer Science", field: "Devops " },
+    { name: "Vishal Kumar", year: 2019, degree: "BA Economics", field: "Junior Android Devloper" },
 ];
 
-// Function to filter and display alumni
-function filterAlumni(searchTerm) {
-    const directory = document.getElementById('directory');
-    directory.innerHTML = '';  // Clear previous results
-    
-    const filteredAlumni = alumniData.filter(alumni => 
-        alumni.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        alumni.year.includes(searchTerm) ||
-        alumni.major.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+// Function to load the alumni data
+function loadAlumni(data) {
+    const alumniList = document.getElementById('alumniList');
+    alumniList.innerHTML = '';  // Clear current list
 
-    if (filteredAlumni.length > 0) {
-        filteredAlumni.forEach(alumni => {
-            const alumniElement = document.createElement('div');
-            alumniElement.classList.add('alumni');
-            alumniElement.innerHTML = `
-                <span class="name">${alumni.name}</span>
-                <div class="details">Graduation Year: ${alumni.year} | Major: ${alumni.major}</div>
-            `;
-            directory.appendChild(alumniElement);
-        });
-        directory.style.display = 'block';
-    } else {
-        directory.style.display = 'none';
-    }
+    data.forEach(alumni => {
+        const alumniElement = document.createElement('div');
+        alumniElement.classList.add('alumni');
+        alumniElement.innerHTML = `
+            <p><strong>Name:</strong> ${alumni.name}</p>
+            <p><strong>Year:</strong> ${alumni.year}</p>
+            <p><strong>Degree:</strong> ${alumni.degree}</p>
+            <p><strong>Field:</strong> ${alumni.field}</p>
+        `;
+        alumniList.appendChild(alumniElement);
+    });
 }
 
-// Event listener for search input
-document.getElementById('searchInput').addEventListener('input', function(event) {
-    const searchTerm = event.target.value.trim();
-    if (searchTerm) {
-        filterAlumni(searchTerm);
-    } else {
-        document.getElementById('directory').style.display = 'none';
-    }
-});
+// Function to filter the alumni data
+function filterAlumni() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+
+    const filteredData = alumniData.filter(alumni => {
+        return (
+            alumni.name.toLowerCase().includes(searchInput) ||
+            alumni.year.toString().includes(searchInput) ||
+            alumni.degree.toLowerCase().includes(searchInput) ||
+            alumni.field.toLowerCase().includes(searchInput)
+        );
+    });
+    loadAlumni(filteredData);
+}
+
+// Event listener for the filter button
+document.getElementById('filterBtn').addEventListener('click', filterAlumni);
+
+// Load all alumni when the page loads
+window.onload = function() {
+    loadAlumni(alumniData);
+};
 
     </script>
 </body>
