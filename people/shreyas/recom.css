@@ -1,6 +1,8 @@
 /* style.css */
+*{
+    font-family: 'Montserrat', sans-serif;
+}
 body {
-    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
@@ -44,7 +46,7 @@ input {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #28a745;
+    background-color: #A781F5;
     color: white;
     border: none;
     border-radius: 5px;
@@ -52,7 +54,7 @@ button {
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #7333f1;
 }
 
 #results {
