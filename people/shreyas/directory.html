@@ -9,11 +9,17 @@
 <body>
     <div class="container">
         <h1>Alumni Directory</h1>
-        <input type="text" id="searchInput" placeholder="Search for alumni...">
-        <div id="directory">
-            <!-- Filtered alumni list will be displayed here -->
+
+        <div class="filter-container">
+            <input type="text" id="searchInput" placeholder="Search by name, year, degree, or field" />
+            <button id="filterBtn">Search</button>
+        </div>
+
+        <div id="alumniList">
+            <!-- Alumni data will be displayed here -->
         </div>
     </div>
+
     <script src="directory.js"></script>
 </body>
 </html>

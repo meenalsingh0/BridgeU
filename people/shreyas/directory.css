@@ -1,25 +1,21 @@
-
-
+html
+{
+    background: linear-gradient(297deg, #A781F5 0%, white 0%, #A781F5 100%);
+}
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    background: linear-gradient(297deg, #A781F5 0%, white 0%, #A781F5 100%);
     height: 100em;
+    margin: 0;
     padding: 0;
 }
 
 .container {
-    width: 500px;
+    width: 600px;
     margin: 50px auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 h1 {
@@ -27,34 +23,44 @@ h1 {
     color: #333;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
+.filter-container {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
 }
 
-#directory {
-    display: none; /* Hidden by default */
-    max-height: 300px;
-    overflow-y: auto;
+input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+#alumniList {
+    margin-top: 20px;
 }
 
 .alumni {
+    background-color: #f9f9f9;
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
 }
 
-.alumni:last-child {
-    border-bottom: none;
-}
-
-.alumni .name {
-    font-weight: bold;
-}
-
-.alumni .details {
-    color: #666;
-    font-size: 0.9em;
+.alumni p {
+    margin: 5px 0;
 }
