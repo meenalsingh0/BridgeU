@@ -1,11 +1,37 @@
-// Sample alumni data
-const alumniData = [
-    { name: "Anay Singh", year: 2015, degree: "Btech Computer Science", field: "Software Engineering" },
-    { name: "Vishal Chauhan", year: 2018, degree: "Btech Computer Science", field: "Freelance web developer" },
-    { name: "Sandhya Yadav", year: 2020, degree: "Btech Computer Science", field: "Data Analysis" },
-    { name: "Tushar Mukherjee", year: 2017, degree: "Btech Computer Science", field: "Devops " },
-    { name: "Vishal Kumar", year: 2019, degree: "BA Economics", field: "Junior Android Devloper" },
-];
+
+// Global variable to store alumni data
+let alumniData = [];
+
+// Function to load the CSV file from the server
+function loadCSV() {
+    fetch('alumni_data.csv')
+        .then(response => response.text())
+        .then(data => {
+            parseCSV(data);
+        })
+        .catch(error => console.error('Error fetching the CSV file:', error));
+}
+
+// Function to parse CSV and load alumni data
+function parseCSV(data) {
+    const rows = data.split('\n');
+
+    // Filter out any empty rows or rows that don't have enough columns
+    alumniData = rows.map(row => row.split(',')).filter(columns => columns.length === 4);
+
+    // Map filtered rows to alumni objects, converting all to strings
+    alumniData = alumniData.map(columns => {
+        const [name, year, degree, field] = columns;
+        return {
+            name: String(name).trim(),
+            year: String(year).trim(),  // Convert year to string
+            degree: String(degree).trim(),
+            field: String(field).trim()
+        };
+    });
+
+    loadAlumni(alumniData); // Load the parsed data initially
+}
 
 // Function to load the alumni data
 function loadAlumni(data) {
@@ -31,10 +57,10 @@ function filterAlumni() {
 
     const filteredData = alumniData.filter(alumni => {
         return (
-            alumni.name.toLowerCase().includes(searchInput) ||
-            alumni.year.toString().includes(searchInput) ||
-            alumni.degree.toLowerCase().includes(searchInput) ||
-            alumni.field.toLowerCase().includes(searchInput)
+            (alumni.name?.toLowerCase() || '').includes(searchInput) ||
+            (alumni.year?.toString() || '').includes(searchInput) ||
+            (alumni.degree?.toLowerCase() || '').includes(searchInput) ||
+            (alumni.field?.toLowerCase() || '').includes(searchInput)
         );
     });
     loadAlumni(filteredData);
@@ -43,7 +69,8 @@ function filterAlumni() {
 // Event listener for the filter button
 document.getElementById('filterBtn').addEventListener('click', filterAlumni);
 
-// Load all alumni when the page loads
+// Load CSV when the page loads
 window.onload = function() {
-    loadAlumni(alumniData);
+    loadCSV();
 };
+
